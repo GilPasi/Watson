@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import Title from '../components/Title.vue'
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <Title text="Welcome To Watson!" level="1"/>
+
+
 </template>
+
+<style scoped>
+</style> 
