@@ -16,10 +16,10 @@ defineProps<{
 
 <style scoped>
 .title {
-  font-size: 2rem; /* Default font size */
+  font-size: 2rem; 
   font-weight: bold;
   margin: 0.5em 0;
-  color: #333; /* Default text color */
+  color: #333; 
 }
 
 /* Additional styles based on heading level if needed */

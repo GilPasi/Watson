@@ -70,5 +70,6 @@ const navigateToOption = (option: string) => {
 
 .p-button {
   min-width: 85px; /* Ensure buttons have consistent width */
+  opacity: 0.85;
 }
 </style>

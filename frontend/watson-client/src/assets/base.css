@@ -38,3 +38,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.flexbox
+{
+  display: flex;
+}
+
+.justifier {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.aligner {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: column;
+}
