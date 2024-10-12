@@ -1,10 +1,16 @@
 <!-- src/components/Header.vue -->
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+import router from '../router'; 
 defineProps<{
   title: string;
   logo: string; 
   options: Array<string>;
 }>();
+
+const navigateToOption = (option: string) => {
+    router.push({name: option.toLowerCase()})
+};
 </script>
 
 <template>
@@ -13,7 +19,11 @@ defineProps<{
     <h1 class="header-title">{{ title }}</h1>
     <nav>
       <ul class="header-options">
-        <li v-for="(option, index) in options" :key="index" class="header-option">{{ option }}</li>
+        <li v-for="(option, index) in options"
+            :key="index"
+            class="header-option"
+            @click="navigateToOption(option)"
+          >{{ option }}</li>
       </ul>
     </nav>
   </header>
@@ -35,6 +45,8 @@ defineProps<{
 .header-title {
   font-size: 1.5rem;
   margin-right: auto;
+  font-family: "Playfair Display", sans-serif ;
+  /* "Sixtyfour Convergence1", */
 }
 
 .header-options {

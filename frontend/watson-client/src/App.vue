@@ -4,6 +4,7 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import logo from '@/assets/watson-logo.svg'; 
 import avatar from '@/assets/otter-avatar-cu.png';
+let options = ['Home', 'About'] 
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import avatar from '@/assets/otter-avatar-cu.png';
     <Header 
       title="Watson" 
       :logo="logo"
-      :options="['Home', 'About', 'Contact']" 
+      :options="options" 
     />
     <main class="main-content">
       <RouterView />
