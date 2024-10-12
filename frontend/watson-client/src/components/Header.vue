@@ -1,15 +1,16 @@
-<!-- src/components/Header.vue -->
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import Button from 'primevue/button';
 import router from '../router'; 
+
 defineProps<{
   title: string;
   logo: string; 
   options: Array<string>;
 }>();
 
+// Navigate to the option
 const navigateToOption = (option: string) => {
-    router.push({name: option.toLowerCase()})
+    router.push({ name: option.toLowerCase() });
 };
 </script>
 
@@ -17,13 +18,15 @@ const navigateToOption = (option: string) => {
   <header class="header">
     <img :src="logo" alt="Logo" class="logo" />
     <h1 class="header-title">{{ title }}</h1>
-    <nav>
-      <ul class="header-options">
-        <li v-for="(option, index) in options"
-            :key="index"
-            class="header-option"
-            @click="navigateToOption(option)"
-          >{{ option }}</li>
+    <nav class="header-options">
+      <ul class="header-options-list">
+        <li v-for="(option, index) in options" :key="index" class="header-option">
+          <Button 
+            :label="option"  
+            class="p-button" 
+            @click="navigateToOption(option)" 
+          />
+        </li>
       </ul>
     </nav>
   </header>
@@ -45,17 +48,27 @@ const navigateToOption = (option: string) => {
 .header-title {
   font-size: 1.5rem;
   margin-right: auto;
-  font-family: "Playfair Display", sans-serif ;
-  /* "Sixtyfour Convergence1", */
+  font-family: "Sixtyfour Convergence", sans-serif;
 }
 
 .header-options {
   display: flex;
   gap: 10px;
-  list-style: none;
+}
+
+.header-options-list {
+  display: flex; /* Horizontal alignment */
+  gap: 10px;
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  list-style: none; /* Remove default bullet points */
 }
 
 .header-option {
-  cursor: pointer;
+  flex: 1;
+}
+
+.p-button {
+  min-width: 85px; /* Ensure buttons have consistent width */
 }
 </style>
