@@ -50,7 +50,6 @@ function downloadQRCode() {
       <div class="homeview-container homeview-container-right">
         <p>QR code from here!</p>
         <div class="homeview-qr homeview-box">
-          <!-- Display the QR code if it has been generated -->
           <img v-if="qrCodeUrl" :src="qrCodeUrl" alt="Generated QR Code" />
         </div>
         <Button
